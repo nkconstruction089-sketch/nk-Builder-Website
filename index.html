@@ -4,43 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NK Elevate | Premium Construction & Engineering</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --gold: #C5A059;
-            --dark-bg: #121212;
-            --section-bg: #1a1a1a;
-            --text-light: #e0e0e0;
+            --accent: #B89550; /* Deep Champagne Gold */
+            --bg-light: #FDFCFB; /* Soft Alabaster */
+            --bg-section: #F4F2EE; /* Warm Stone */
+            --text-dark: #1E293B; /* Slate Dark */
+            --text-dim: #64748B; /* Muted Slate */
             --white: #ffffff;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
 
-        body { background-color: var(--dark-bg); color: var(--text-light); line-height: 1.7; }
+        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.7; }
 
         /* Navigation */
         nav {
-            background: rgba(18, 18, 18, 0.95);
-            padding: 1.5rem 8%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.2rem 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: fixed;
             width: 100%;
             z-index: 1000;
-            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            border-bottom: 1px solid rgba(184, 149, 80, 0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
 
-        .logo { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.8rem; letter-spacing: 2px; }
-        .nav-links a { color: var(--white); text-decoration: none; margin-left: 30px; font-weight: 500; font-size: 0.85rem; text-transform: uppercase; transition: 0.3s; }
-        .nav-links a:hover { color: var(--gold); }
+        .logo { font-family: 'Playfair Display', serif; color: var(--accent); font-size: 1.6rem; letter-spacing: 1px; }
+        .nav-links a { color: var(--text-dark); text-decoration: none; margin-left: 30px; font-weight: 500; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; letter-spacing: 1px; }
+        .nav-links a:hover { color: var(--accent); }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+            background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
                         url('https://images.unsplash.com/photo-1541913057-955ae2bc4023?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
@@ -52,61 +54,77 @@
             padding: 0 10%;
         }
 
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); color: var(--white); line-height: 1.1; margin-bottom: 20px; }
-        .hero p { font-size: 1.2rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 40px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4rem); color: var(--text-dark); line-height: 1.2; margin-bottom: 20px; font-weight: 700; }
+        .hero p { font-size: 1.1rem; color: var(--accent); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 40px; font-weight: 600; }
 
         .btn-group { display: flex; gap: 20px; }
-        .btn { padding: 15px 40px; text-decoration: none; font-weight: 700; border-radius: 2px; transition: 0.4s; text-transform: uppercase; font-size: 0.9rem; }
-        .btn-gold { background: var(--gold); color: #000; }
-        .btn-outline { border: 1px solid var(--white); color: var(--white); }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+        .btn { padding: 16px 42px; text-decoration: none; font-weight: 600; border-radius: 4px; transition: 0.4s; text-transform: uppercase; font-size: 0.85rem; border: none; cursor: pointer; display: inline-block; letter-spacing: 1px; }
+        .btn-gold { background: var(--accent); color: var(--white); }
+        .btn-outline { border: 1px solid var(--accent); color: var(--accent); background: transparent; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(184, 149, 80, 0.2); opacity: 0.9; }
 
-        /* About Us - Strong Intro */
-        .about { padding: 100px 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .about-text h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--gold); margin-bottom: 25px; }
-        .about-text p { margin-bottom: 20px; font-size: 1.05rem; color: #bbb; }
-        .about-image img { width: 100%; border: 10px solid var(--section-bg); box-shadow: 20px 20px 0px var(--gold); }
+        /* Gallery Section */
+        .gallery { padding: 100px 10%; text-align: center; }
+        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 50px; }
+        .gallery-item { position: relative; overflow: hidden; border-radius: 8px; height: 500px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .gallery-item:hover img { transform: scale(1.08); }
+        .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: white; padding: 30px; text-align: left; }
+        .gallery-caption h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 5px; }
+
+        /* About Us */
+        .about { padding: 120px 10%; display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; }
+        .about-text h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--text-dark); margin-bottom: 25px; }
+        .about-text p { margin-bottom: 20px; font-size: 1.05rem; color: var(--text-dim); }
+        .about-image img { width: 100%; border-radius: 4px; box-shadow: 30px 30px 0px -5px var(--bg-section), 30px 30px 0px var(--accent); }
 
         /* Services Grid */
-        .services { background: var(--section-bg); padding: 100px 10%; text-align: center; }
+        .services { background: var(--bg-section); padding: 120px 10%; text-align: center; }
         .section-header { margin-bottom: 60px; }
-        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--white); }
-        .section-header .line { width: 80px; height: 3px; background: var(--gold); margin: 20px auto; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--text-dark); }
+        .section-header .line { width: 60px; height: 2px; background: var(--accent); margin: 25px auto; }
 
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .service-card { background: var(--dark-bg); padding: 50px 30px; border-radius: 5px; transition: 0.3s; border-bottom: 3px solid transparent; }
-        .service-card:hover { border-bottom: 3px solid var(--gold); background: #222; }
-        .service-card i { font-size: 3rem; color: var(--gold); margin-bottom: 25px; }
-        .service-card h3 { margin-bottom: 15px; color: var(--white); }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .service-card { background: var(--white); padding: 60px 40px; border-radius: 8px; transition: 0.3s; border: 1px solid rgba(0,0,0,0.03); box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
+        .service-card:hover { border: 1px solid var(--accent); transform: translateY(-5px); box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
+        .service-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 25px; }
+        .service-card h3 { margin-bottom: 15px; color: var(--text-dark); font-family: 'Playfair Display', serif; font-size: 1.5rem; }
+        .service-card p { color: var(--text-dim); }
 
         /* Stats */
-        .counter-section { padding: 60px 10%; background: var(--gold); color: #000; display: flex; justify-content: space-around; text-align: center; }
-        .counter-item h2 { font-size: 3rem; font-weight: 800; }
-        .counter-item p { font-weight: 600; text-transform: uppercase; font-size: 0.9rem; }
+        .counter-section { padding: 80px 10%; background: var(--accent); color: var(--white); display: flex; justify-content: space-around; text-align: center; }
+        .counter-item h2 { font-size: 3.5rem; font-weight: 700; font-family: 'Playfair Display', serif; }
+        .counter-item p { font-weight: 400; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
 
         /* Testimonials */
-        .testimonials { padding: 100px 10%; text-align: center; }
-        .testimonial-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .testi-card { background: var(--section-bg); padding: 40px; position: relative; font-style: italic; }
-        .testi-card::before { content: "\f10d"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--gold); font-size: 2rem; display: block; margin-bottom: 20px; }
-        .client-name { margin-top: 20px; display: block; font-weight: 700; color: var(--gold); font-style: normal; text-transform: uppercase; }
+        .testimonials { padding: 120px 10%; text-align: center; background: var(--bg-light); }
+        .testimonial-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 60px; margin-bottom: 60px;}
+        .testi-card { background: var(--white); padding: 50px; border-radius: 4px; position: relative; font-style: italic; border: 1px solid rgba(0,0,0,0.03); box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+        .testi-card::before { content: "\f10d"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--accent); font-size: 1.5rem; display: block; margin-bottom: 20px; opacity: 0.3; }
+        .client-name { margin-top: 25px; display: block; font-weight: 600; color: var(--accent); font-style: normal; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+
+        /* Review Modal Styles */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(30, 41, 59, 0.8); }
+        .modal-content { background: var(--white); margin: 8% auto; padding: 50px; border-top: 5px solid var(--accent); width: 90%; max-width: 500px; position: relative; border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
+        .close-btn { position: absolute; right: 25px; top: 15px; color: var(--text-dim); font-size: 24px; cursor: pointer; }
 
         /* Contact Section */
-        .contact { padding: 100px 10%; background: #0c0c0c; display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; }
-        .contact-info h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 30px; color: var(--white); }
-        .info-item { display: flex; align-items: center; margin-bottom: 25px; }
-        .info-item i { width: 50px; height: 50px; background: var(--gold); color: #000; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 20px; }
+        .contact { padding: 120px 10%; background: #F9FAFB; display: grid; grid-template-columns: 1fr 1.5fr; gap: 100px; }
+        .contact-info h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 35px; color: var(--text-dark); }
+        .info-item { display: flex; align-items: center; margin-bottom: 35px; }
+        .info-item i { width: 50px; height: 50px; border: 1px solid var(--accent); color: var(--accent); display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 25px; font-size: 1.2rem; }
 
-        .contact-form input, .contact-form select, .contact-form textarea {
-            width: 100%; padding: 15px; background: #1a1a1a; border: 1px solid #333; color: white; margin-bottom: 15px;
+        .contact-form input, .contact-form select, .contact-form textarea, .modal-content input, .modal-content textarea {
+            width: 100%; padding: 18px; background: var(--white); border: 1px solid #E2E8F0; color: var(--text-dark); margin-bottom: 20px; border-radius: 4px;
         }
         .contact-form button { width: 100%; border: none; cursor: pointer; }
 
-        footer { text-align: center; padding: 40px; border-top: 1px solid #333; font-size: 0.8rem; color: #666; }
+        footer { text-align: center; padding: 50px; border-top: 1px solid #E2E8F0; font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
 
         @media (max-width: 968px) {
-            .about, .contact { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.8rem; }
+            .about, .contact, .gallery-grid { grid-template-columns: 1fr; gap: 50px; }
+            .hero h1 { font-size: 2.5rem; }
+            .gallery-item { height: 350px; }
         }
     </style>
 </head>
@@ -123,59 +141,83 @@
     </nav>
 
     <header class="hero">
-        <p>10+ Years of Engineering Excellence</p>
-        <h1>Building Legacies, <br><span style="color: var(--gold);">Elevating Lifestyles.</span></h1>
+        <p>A Decade of Architectural Mastery</p>
+        <h1>Engineering Luxury. <br><span style="color: var(--accent);">Honoring Quality.</span></h1>
         <div class="btn-group">
-            <a href="https://wa.me/919667852195" class="btn btn-gold">Connect on WhatsApp</a>
-            <a href="#contact" class="btn btn-outline">Enquire Now</a>
+            <a href="https://wa.me/919667852195" class="btn btn-gold">Connect via WhatsApp</a>
+            <a href="#contact" class="btn btn-outline">Start Your Project</a>
         </div>
     </header>
 
     <section class="counter-section">
-        <div class="counter-item"><h2>200+</h2><p>Projects Delivered</p></div>
-        <div class="counter-item"><h2>50+</h2><p>Expert Staff</p></div>
-        <div class="counter-item"><h2>100%</h2><p>Transparency</p></div>
+        <div class="counter-item"><h2>200+</h2><p>Completed Projects</p></div>
+        <div class="counter-item"><h2>50+</h2><p>Qualified Engineers</p></div>
+        <div class="counter-item"><h2>100%</h2><p>Contract Transparency</p></div>
+    </section>
+
+    <section class="gallery">
+        <div class="section-header">
+            <h2>Masterpiece Portfolios</h2>
+            <div class="line"></div>
+            <p style="color: var(--text-dim);">A glimpse into our signature interior and residential flat projects.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1974&auto=format&fit=crop" alt="Bespoke Luxury Interior Design">
+                <div class="gallery-caption">
+                    <h3>Bespoke Interiors</h3>
+                    <p>Modern Living Room Curation</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop" alt="Premium Residential Flat Design">
+                <div class="gallery-caption">
+                    <h3>Signature Flats</h3>
+                    <p>Premium Master Suite Architecture</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="about" id="about">
         <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800" alt="NK Elevate Construction Site">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800" alt="NK Elevate Site">
         </div>
         <div class="about-text">
-            <h2>Who We Are</h2>
-            <p><strong>NK Elevate Construction</strong> isn't just a building firm; we are a legacy-driven collective led by <strong>Nadeem Khan</strong>. Since 2015, we have redefined the skyline of Delhi NCR by bridging the gap between "Premium Luxury" and "Affordable Reality."</p>
-            <p>Our philosophy is built on the pillars of <strong>Honest Consultancy</strong> and <strong>Scientific Engineering</strong>. Unlike traditional contractors, we involve our clients in every milestone—from the first 3D render to the final coat of paint. We believe that your home is your biggest investment, and it deserves nothing less than perfection.</p>
-            <p>With a robust team of 50+ architects, engineers, and master craftsmen, we ensure that "Timely Delivery" isn't just a promise—it’s our standard operating procedure.</p>
+            <h2>Our Distinction</h2>
+            <p><strong>NK Elevate Construction</strong> is built on a decade-long journey of engineering excellence and trust. Led by co-founder <strong>Nadeem Khan</strong>, our firm has evolved over the past 10+ years from a small team into a premier construction and interior design leader in the region.</p>
+            <p>At the heart of our leadership is a <strong>consultancy-driven approach</strong>. We believe in deep listening—understanding our clients' unique lifestyle and functional needs thoroughly before a single brick is laid. This ensures every project is as practical as it is beautiful.</p>
+            <p><strong>Our Mission:</strong> To set the benchmark for quality and transparency in the construction industry, ensuring timely completion through meticulous planning. <br><strong>Our Vision:</strong> To become the most trusted name in bespoke construction and interior design through unwavering honesty and craftsmanship.</p>
         </div>
     </section>
 
     <section class="services" id="services">
         <div class="section-header">
-            <h2>Our Core Expertise</h2>
+            <h2>The NK Expertise</h2>
             <div class="line"></div>
         </div>
         <div class="service-grid">
             <div class="service-card">
                 <i class="fas fa-city"></i>
-                <h3>Civil Construction</h3>
-                <p>From foundation to finish, we use Grade-A materials to ensure structural integrity that lasts generations.</p>
+                <h3>Structural Engineering</h3>
+                <p>Unyielding structural integrity using industry-leading materials for lasting multi-generational homes.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-couch"></i>
-                <h3>Bespoke Interiors</h3>
-                <p>Modern, minimalist, or royal—our interior team transforms spaces into masterpieces using premium finishes.</p>
+                <h3>Interior Curation</h3>
+                <p>Sophisticated interior environments that blend modern aesthetics with functional luxury and premium finishes.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-handshake"></i>
-                <h3>Honest Consultancy</h3>
-                <p>Our material selection and budget planning consultancy typically saves our clients 15% on total project costs.</p>
+                <h3>Strategic Consultancy</h3>
+                <p>Data-driven advice on material procurement and budget optimization, ensuring smooth project workflows.</p>
             </div>
         </div>
     </section>
 
     <section class="testimonials">
         <div class="section-header">
-            <h2>What Our Clients Say</h2>
+            <h2>Client Perspectives</h2>
             <div class="line"></div>
         </div>
         <div class="testimonial-container">
@@ -188,60 +230,87 @@
                 <span class="client-name">Rahul Kapoor</span>
             </div>
             <div class="testi-card">
-                "Best decision ever. Transparent pricing, premium quality and on-time delivery. Their consultancy saved us almost 15% on materials."
+                "Best decision ever. Transparent pricing, premium quality and on-time delivery. We are extremely happy with the final result."
                 <span class="client-name">Anita Mehra</span>
             </div>
         </div>
+        <button class="btn btn-outline" onclick="openModal()" style="border-width:1px">Write Your Experience</button>
     </section>
+
+    <div id="reviewModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 style="color:var(--text-dark); font-family:'Playfair Display', serif; margin-bottom:25px;">Client Feedback</h2>
+            <form id="clientReviewForm">
+                <input type="text" placeholder="Full Name" required>
+                <textarea rows="5" placeholder="Share your experience with us..." required></textarea>
+                <button type="submit" class="btn btn-gold" style="width:100%">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
 
     <section class="contact" id="contact">
         <div class="contact-info">
-            <h2>Elevate Your Dream Project</h2>
-            <p style="margin-bottom: 40px;">Ready to build? We respond to all enquiries within 2 hours during business hours.</p>
+            <h2>Begin Your Legacy</h2>
+            <p style="margin-bottom: 45px; color: var(--text-dim);">Schedule an expert consultation and receive a comprehensive reply within 2 hours.</p>
 
             <div class="info-item">
                 <i class="fas fa-phone"></i>
                 <div>
-                    <strong>Call or WhatsApp</strong>
+                    <strong style="font-size: 0.8rem; text-transform: uppercase; color: var(--accent);">Direct Line</strong>
                     <p>+91 96678 52195</p>
                 </div>
             </div>
             <div class="info-item">
                 <i class="fas fa-envelope"></i>
                 <div>
-                    <strong>Email Us</strong>
+                    <strong style="font-size: 0.8rem; text-transform: uppercase; color: var(--accent);">Professional Email</strong>
                     <p>nkconstruction089@gmail.com</p>
                 </div>
             </div>
             <div class="info-item">
                 <i class="fas fa-clock"></i>
                 <div>
-                    <strong>Working Hours</strong>
+                    <strong style="font-size: 0.8rem; text-transform: uppercase; color: var(--accent);">Business Hours</strong>
                     <p>10:00 AM – 7:00 PM</p>
                 </div>
             </div>
         </div>
         <div class="contact-form">
             <form action="#">
-                <input type="text" placeholder="Your Name" required>
-                <input type="text" placeholder="Phone Number" required>
+                <input type="text" placeholder="Name" required>
+                <input type="text" placeholder="Phone" required>
                 <select required>
-                    <option value="">Select Project Type</option>
-                    <option>New Residential Construction</option>
-                    <option>Commercial Building</option>
-                    <option>Home Interior Design</option>
-                    <option>Full Renovation</option>
-                    <option>Consultancy Only</option>
+                    <option value="">Project Specification</option>
+                    <option>Residential Development</option>
+                    <option>Commercial Infrastructure</option>
+                    <option>Interior Architecture</option>
+                    <option>Renovation</option>
+                    <option>Engineering Consultancy</option>
                 </select>
-                <textarea rows="6" placeholder="Tell us about your requirements..."></textarea>
-                <button type="submit" class="btn btn-gold">Send My Enquiry</button>
+                <textarea rows="6" placeholder="Project details and requirements..."></textarea>
+                <button type="submit" class="btn btn-gold">Request Consultation</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 NK Elevate Construction • Led by Nadeem Khan • All Rights Reserved</p>
+        <p>© 2026 NK Elevate Construction • Led by Nadeem Khan • Delhi NCR • Est. 2015</p>
     </footer>
+
+    <script>
+        function openModal() { document.getElementById("reviewModal").style.display = "block"; }
+        function closeModal() { document.getElementById("reviewModal").style.display = "none"; }
+        window.onclick = function(event) {
+            let modal = document.getElementById("reviewModal");
+            if (event.target == modal) { modal.style.display = "none"; }
+        }
+        document.getElementById("clientReviewForm").onsubmit = function(e) {
+            e.preventDefault();
+            alert("Thank you for your feedback. Our team will review your submission shortly.");
+            closeModal();
+        }
+    </script>
 
 </body>
 </html>
