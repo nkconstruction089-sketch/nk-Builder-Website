@@ -3,256 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="XfyDw-09ZngkXzNm8_un2hNYioj3I7nSdg82F4_pylI" />
-    <title>NK Construction | Building & Interior Excellence</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>NK Elevate | Premium Construction & Engineering</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        .gold-gradient { background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%); }
-        .text-gold { color: #d4af37; }
-        .bg-dark { background-color: #1a1a1a; }
-        html { scroll-behavior: smooth; }
-        .portfolio-card:hover img { transform: scale(1.1); transition: 0.5s; }
-        .before-after-img { height: 300px; object-fit: cover; width: 100%; }
+        :root {
+            --gold: #C5A059;
+            --dark-bg: #121212;
+            --section-bg: #1a1a1a;
+            --text-light: #e0e0e0;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
+
+        body { background-color: var(--dark-bg); color: var(--text-light); line-height: 1.7; }
+
+        /* Navigation */
+        nav {
+            background: rgba(18, 18, 18, 0.95);
+            padding: 1.5rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .logo { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.8rem; letter-spacing: 2px; }
+        .nav-links a { color: var(--white); text-decoration: none; margin-left: 30px; font-weight: 500; font-size: 0.85rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1541913057-955ae2bc4023?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+        }
+
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); color: var(--white); line-height: 1.1; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 40px; }
+
+        .btn-group { display: flex; gap: 20px; }
+        .btn { padding: 15px 40px; text-decoration: none; font-weight: 700; border-radius: 2px; transition: 0.4s; text-transform: uppercase; font-size: 0.9rem; }
+        .btn-gold { background: var(--gold); color: #000; }
+        .btn-outline { border: 1px solid var(--white); color: var(--white); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+
+        /* About Us - Strong Intro */
+        .about { padding: 100px 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-text h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--gold); margin-bottom: 25px; }
+        .about-text p { margin-bottom: 20px; font-size: 1.05rem; color: #bbb; }
+        .about-image img { width: 100%; border: 10px solid var(--section-bg); box-shadow: 20px 20px 0px var(--gold); }
+
+        /* Services Grid */
+        .services { background: var(--section-bg); padding: 100px 10%; text-align: center; }
+        .section-header { margin-bottom: 60px; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--white); }
+        .section-header .line { width: 80px; height: 3px; background: var(--gold); margin: 20px auto; }
+
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background: var(--dark-bg); padding: 50px 30px; border-radius: 5px; transition: 0.3s; border-bottom: 3px solid transparent; }
+        .service-card:hover { border-bottom: 3px solid var(--gold); background: #222; }
+        .service-card i { font-size: 3rem; color: var(--gold); margin-bottom: 25px; }
+        .service-card h3 { margin-bottom: 15px; color: var(--white); }
+
+        /* Stats */
+        .counter-section { padding: 60px 10%; background: var(--gold); color: #000; display: flex; justify-content: space-around; text-align: center; }
+        .counter-item h2 { font-size: 3rem; font-weight: 800; }
+        .counter-item p { font-weight: 600; text-transform: uppercase; font-size: 0.9rem; }
+
+        /* Testimonials */
+        .testimonials { padding: 100px 10%; text-align: center; }
+        .testimonial-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .testi-card { background: var(--section-bg); padding: 40px; position: relative; font-style: italic; }
+        .testi-card::before { content: "\f10d"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--gold); font-size: 2rem; display: block; margin-bottom: 20px; }
+        .client-name { margin-top: 20px; display: block; font-weight: 700; color: var(--gold); font-style: normal; text-transform: uppercase; }
+
+        /* Contact Section */
+        .contact { padding: 100px 10%; background: #0c0c0c; display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; }
+        .contact-info h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 30px; color: var(--white); }
+        .info-item { display: flex; align-items: center; margin-bottom: 25px; }
+        .info-item i { width: 50px; height: 50px; background: var(--gold); color: #000; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 20px; }
+
+        .contact-form input, .contact-form select, .contact-form textarea {
+            width: 100%; padding: 15px; background: #1a1a1a; border: 1px solid #333; color: white; margin-bottom: 15px;
+        }
+        .contact-form button { width: 100%; border: none; cursor: pointer; }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid #333; font-size: 0.8rem; color: #666; }
+
+        @media (max-width: 968px) {
+            .about, .contact { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.8rem; }
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body>
 
-    <nav class="fixed w-full z-50 bg-white shadow-md">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-gray-900">NK <span class="text-gold">CONSTRUCTION</span></div>
-            <div class="hidden md:flex space-x-6 font-medium items-center">
-                <a href="#home" class="hover:text-gold transition text-sm uppercase tracking-wider">Home</a>
-                <a href="#portfolio" class="hover:text-gold transition text-sm uppercase tracking-wider">Portfolio</a>
-                <a href="#transformation" class="hover:text-gold transition text-sm uppercase tracking-wider">Transformations</a>
-                <a href="#testimonials" class="hover:text-gold transition text-sm uppercase tracking-wider">Reviews</a>
-                <a href="#payment" class="hover:text-gold transition text-sm uppercase tracking-wider">Payment</a>
-                <a href="tel:+919667852195" class="bg-yellow-600 text-white px-5 py-2 rounded-md hover:bg-yellow-700 transition flex items-center gap-2">
-                   <i class="fas fa-phone-alt"></i> Call Now
-                </a>
-            </div>
+    <nav>
+        <div class="logo">NK ELEVATE</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Expertise</a>
+            <a href="#contact">Consultation</a>
         </div>
     </nav>
 
-    <section id="home" class="relative h-screen flex items-center bg-gray-900 text-white pt-16">
-        <div class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80')] bg-cover bg-center"></div>
-        <div class="container mx-auto px-6 z-10 text-center md:text-left">
-            <h1 class="text-5xl md:text-7xl font-bold mb-4 leading-tight">10+ Years of Building <br><span class="text-gold">& Interior Excellence</span></h1>
-            <p class="text-xl mb-8 max-w-2xl text-gray-300">Expert Consultancy & Execution by Co-founder Nadeem Khan. Trusted by 100+ Happy Clients.</p>
-            <div class="flex flex-wrap justify-center md:justify-start gap-4">
-                <a href="#contact" class="gold-gradient px-8 py-3 rounded-lg font-bold hover:scale-105 transition shadow-lg text-white">Get Free Consultation</a>
-                <a href="https://wa.me/919667852195" target="_blank" class="bg-green-600 px-8 py-3 rounded-lg font-bold flex items-center gap-2 hover:bg-green-700 transition shadow-lg text-white">
-                    <i class="fab fa-whatsapp text-xl"></i> WhatsApp Now
-                </a>
+    <header class="hero">
+        <p>10+ Years of Engineering Excellence</p>
+        <h1>Building Legacies, <br><span style="color: var(--gold);">Elevating Lifestyles.</span></h1>
+        <div class="btn-group">
+            <a href="https://wa.me/919667852195" class="btn btn-gold">Connect on WhatsApp</a>
+            <a href="#contact" class="btn btn-outline">Enquire Now</a>
+        </div>
+    </header>
+
+    <section class="counter-section">
+        <div class="counter-item"><h2>200+</h2><p>Projects Delivered</p></div>
+        <div class="counter-item"><h2>50+</h2><p>Expert Staff</p></div>
+        <div class="counter-item"><h2>100%</h2><p>Transparency</p></div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800" alt="NK Elevate Construction Site">
+        </div>
+        <div class="about-text">
+            <h2>Who We Are</h2>
+            <p><strong>NK Elevate Construction</strong> isn't just a building firm; we are a legacy-driven collective led by <strong>Nadeem Khan</strong>. Since 2015, we have redefined the skyline of Delhi NCR by bridging the gap between "Premium Luxury" and "Affordable Reality."</p>
+            <p>Our philosophy is built on the pillars of <strong>Honest Consultancy</strong> and <strong>Scientific Engineering</strong>. Unlike traditional contractors, we involve our clients in every milestone—from the first 3D render to the final coat of paint. We believe that your home is your biggest investment, and it deserves nothing less than perfection.</p>
+            <p>With a robust team of 50+ architects, engineers, and master craftsmen, we ensure that "Timely Delivery" isn't just a promise—it’s our standard operating procedure.</p>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our Core Expertise</h2>
+            <div class="line"></div>
+        </div>
+        <div class="service-grid">
+            <div class="service-card">
+                <i class="fas fa-city"></i>
+                <h3>Civil Construction</h3>
+                <p>From foundation to finish, we use Grade-A materials to ensure structural integrity that lasts generations.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-couch"></i>
+                <h3>Bespoke Interiors</h3>
+                <p>Modern, minimalist, or royal—our interior team transforms spaces into masterpieces using premium finishes.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Honest Consultancy</h3>
+                <p>Our material selection and budget planning consultancy typically saves our clients 15% on total project costs.</p>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-2 border-l-4 border-gold pl-4 uppercase tracking-tighter">Recent Masterpieces</h2>
-            <p class="text-gray-500 mb-10 ml-5 text-lg">A glimpse into our high-end residential and commercial projects.</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="portfolio-card overflow-hidden rounded-lg shadow-lg relative group">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500" alt="Luxury Villa" class="w-full h-64 object-cover transition duration-500">
-                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white p-4 text-center">
-                        <p class="font-bold">Luxury Villa Construction</p>
-                    </div>
-                </div>
-                <div class="portfolio-card overflow-hidden rounded-lg shadow-lg relative group">
-                    <img src="https://images.unsplash.com/photo-1556911223-e452028e96ad?auto=format&fit=crop&w=500" alt="Modern Kitchen" class="w-full h-64 object-cover transition duration-500">
-                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white p-4 text-center">
-                        <p class="font-bold">Modular Kitchen Interior</p>
-                    </div>
-                </div>
-                <div class="portfolio-card overflow-hidden rounded-lg shadow-lg relative group">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500" alt="Office Space" class="w-full h-64 object-cover transition duration-500">
-                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white p-4 text-center">
-                        <p class="font-bold">Corporate Office Design</p>
-                    </div>
-                </div>
-                <div class="portfolio-card overflow-hidden rounded-lg shadow-lg relative group">
-                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=500" alt="Living Room" class="w-full h-64 object-cover transition duration-500">
-                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white p-4 text-center">
-                        <p class="font-bold">Premium Living Room Decor</p>
-                    </div>
-                </div>
+    <section class="testimonials">
+        <div class="section-header">
+            <h2>What Our Clients Say</h2>
+            <div class="line"></div>
+        </div>
+        <div class="testimonial-container">
+            <div class="testi-card">
+                "Nadeem sir's team gave us complete consultancy before we even signed. The 3BHK villa turned out better than our dreams – and within budget!"
+                <span class="client-name">Mr. & Mrs. Sharma</span>
+            </div>
+            <div class="testi-card">
+                "Their interior team transformed our old house into a modern masterpiece. Zoom meetings made every decision easy. Highly recommended!"
+                <span class="client-name">Rahul Kapoor</span>
+            </div>
+            <div class="testi-card">
+                "Best decision ever. Transparent pricing, premium quality and on-time delivery. Their consultancy saved us almost 15% on materials."
+                <span class="client-name">Anita Mehra</span>
             </div>
         </div>
     </section>
 
-    <section id="transformation" class="py-20 bg-gray-50 border-y">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold uppercase tracking-tighter mb-4">Magic of Transformation</h2>
-                <div class="w-24 h-1 gold-gradient mx-auto"></div>
-                <p class="text-gray-500 mt-4">We don't just build; we redefine spaces.</p>
-            </div>
+    <section class="contact" id="contact">
+        <div class="contact-info">
+            <h2>Elevate Your Dream Project</h2>
+            <p style="margin-bottom: 40px;">Ready to build? We respond to all enquiries within 2 hours during business hours.</p>
 
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg p-4">
-                    <div class="grid grid-cols-2 gap-2">
-                        <div class="relative">
-                            <span class="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 font-bold rounded">BEFORE</span>
-                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400" class="before-after-img rounded" alt="Old Kitchen">
-                        </div>
-                        <div class="relative">
-                            <span class="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 font-bold rounded">AFTER</span>
-                            <img src="https://images.unsplash.com/photo-1556911223-e452028e96ad?auto=format&fit=crop&w=400" class="before-after-img rounded" alt="New Kitchen">
-                        </div>
-                    </div>
-                    <h3 class="mt-4 font-bold text-xl text-center">Kitchen Remodeling Project</h3>
-                </div>
-
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg p-4">
-                    <div class="grid grid-cols-2 gap-2">
-                        <div class="relative">
-                            <span class="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 font-bold rounded">BEFORE</span>
-                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=400" class="before-after-img rounded" alt="Old Living Room">
-                        </div>
-                        <div class="relative">
-                            <span class="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 font-bold rounded">AFTER</span>
-                            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=400" class="before-after-img rounded" alt="Luxury Living Room">
-                        </div>
-                    </div>
-                    <h3 class="mt-4 font-bold text-xl text-center">Full Home Interior Overhaul</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonials" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 border-l-4 border-gold pl-4 uppercase">Client Feedback</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-8 rounded-lg border-b-4 border-gold italic shadow-sm">
-                    <p class="text-gray-600 mb-6">"NK Construction transformed our old flat into a modern sanctuary. Nadeem's eye for detail in the false ceiling work was impressive!"</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600">RK</div>
-                        <div>
-                            <p class="font-bold text-sm">Rahul Kapoor</p>
-                            <p class="text-xs text-gray-400">Home Owner, Delhi</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-lg border-b-4 border-gold italic shadow-sm">
-                    <p class="text-gray-600 mb-6">"Professional, honest, and delivered on time. They handled the entire site construction while I was out of town. Truly trustworthy."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600">MS</div>
-                        <div>
-                            <p class="font-bold text-sm">Mohit Sharma</p>
-                            <p class="text-xs text-gray-400">Business Owner</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-lg border-b-4 border-gold italic shadow-sm">
-                    <p class="text-gray-600 mb-6">"The modular kitchen design they provided was both budget-friendly and high-quality. Highly recommend their interior services."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600">AA</div>
-                        <div>
-                            <p class="font-bold text-sm">Anjali Arya</p>
-                            <p class="text-xs text-gray-400">Architect</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="payment" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <div class="max-w-5xl mx-auto bg-gray-900 text-white rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
-                <div class="p-10 md:w-1/2 gold-gradient flex flex-col justify-center text-gray-900">
-                    <h2 class="text-3xl font-bold mb-4 uppercase">Payment Options</h2>
-                    <p class="mb-6 opacity-90 font-medium">Choose your preferred method to proceed with project fees or consultancy charges.</p>
-                    
-                    <div class="space-y-4">
-                        <a href="https://wa.me/919667852195?text=I want to pay through UPI/QR Code" class="bg-white text-gray-900 p-4 rounded-lg flex items-center justify-between hover:bg-gray-100 transition font-bold shadow-md">
-                            <span>Pay via UPI / QR Scan</span>
-                            <i class="fas fa-qrcode text-xl text-yellow-600"></i>
-                        </a>
-                        <a href="tel:+919667852195" class="bg-dark text-white p-4 rounded-lg flex items-center justify-between border border-gold/50 hover:bg-black transition font-bold shadow-md">
-                            <span>Request Custom Invoice</span>
-                            <i class="fas fa-file-invoice-dollar text-xl text-gold"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="p-10 md:w-1/2 bg-gray-800">
-                    <h3 class="text-xl font-bold mb-6 text-gold underline tracking-wider">OFFICIAL BANKING DETAILS</h3>
-                    <div class="space-y-4 text-sm font-mono">
-                        <div class="border-b border-gray-700 pb-2">
-                            <span class="text-gray-400 block text-xs">ACCOUNT NUMBER</span>
-                            <span class="text-lg tracking-widest text-white">10172341665</span>
-                        </div>
-                        <div class="border-b border-gray-700 pb-2">
-                            <span class="text-gray-400 block text-xs">IFSC CODE</span>
-                            <span class="text-lg text-white">IDFB0020123</span>
-                        </div>
-                        <div class="border-b border-gray-700 pb-2">
-                            <span class="text-gray-400 block text-xs">BANK NAME</span>
-                            <span class="text-lg uppercase text-white">IDFC FIRST BANK</span>
-                        </div>
-                        <p class="text-gray-500 italic mt-4 text-xs font-sans">*Consultancy fees and project milestones are payable as per the agreement.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-12">
+            <div class="info-item">
+                <i class="fas fa-phone"></i>
                 <div>
-                    <h2 class="text-4xl font-bold mb-6 uppercase tracking-tighter">Get In Touch</h2>
-                    <p class="text-gray-600 mb-8 font-medium italic">"Expert consultancy is just a call away. Get your dream project started today."</p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-5">
-                            <div class="w-12 h-12 gold-gradient flex items-center justify-center rounded-full text-white shadow-md">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Phone</h4>
-                                <p class="text-gray-600">+91 9667852195</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-5">
-                            <div class="w-12 h-12 gold-gradient flex items-center justify-center rounded-full text-white shadow-md">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Email</h4>
-                                <p class="text-gray-600">nkconstruction089@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
+                    <strong>Call or WhatsApp</strong>
+                    <p>+91 96678 52195</p>
                 </div>
-
-                <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST" class="bg-gray-50 p-10 rounded-xl shadow-xl border-t-4 border-gold">
-                    <h3 class="text-2xl font-bold mb-6">Send an Inquiry</h3>
-                    <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
-                    <input type="hidden" name="_subject" value="New Inquiry from NK Construction Website">
-
-                    <div class="grid grid-cols-1 gap-4">
-                        <input type="text" name="Full Name" placeholder="Full Name" class="border p-4 rounded focus:outline-gold w-full" required>
-                        <input type="email" name="Email" placeholder="Your Email Address" class="border p-4 rounded focus:outline-gold w-full" required>
-                        <input type="tel" name="Phone" placeholder="Mobile Number" class="border p-4 rounded focus:outline-gold w-full" required>
-                        <textarea name="Project Description" placeholder="Describe your project (e.g., 3BHK Flat Interior or House Construction)..." rows="4" class="border p-4 rounded focus:outline-gold w-full" required></textarea>
-                        <button type="submit" class="gold-gradient text-white py-4 rounded font-bold uppercase tracking-widest shadow-lg hover:brightness-110 transition">Send Message</button>
-                    </div>
-                </form>
             </div>
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <strong>Email Us</strong>
+                    <p>nkconstruction089@gmail.com</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <strong>Working Hours</strong>
+                    <p>10:00 AM – 7:00 PM</p>
+                </div>
+            </div>
+        </div>
+        <div class="contact-form">
+            <form action="#">
+                <input type="text" placeholder="Your Name" required>
+                <input type="text" placeholder="Phone Number" required>
+                <select required>
+                    <option value="">Select Project Type</option>
+                    <option>New Residential Construction</option>
+                    <option>Commercial Building</option>
+                    <option>Home Interior Design</option>
+                    <option>Full Renovation</option>
+                    <option>Consultancy Only</option>
+                </select>
+                <textarea rows="6" placeholder="Tell us about your requirements..."></textarea>
+                <button type="submit" class="btn btn-gold">Send My Enquiry</button>
+            </form>
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-400 py-12">
-        <div class="container mx-auto px-6 text-center">
-            <div class="text-2xl font-bold text-white mb-4">NK <span class="text-gold">CONSTRUCTION</span></div>
-            <p class="mb-6 max-w-lg mx-auto text-sm leading-relaxed">Trusted across India for 10+ years. We turn your vision into structural reality with quality and honesty.</p>
-            <div class="border-t border-gray-800 pt-8 text-xs uppercase tracking-widest">
-                &copy; 2026 NK CONSTRUCTION. ALL RIGHTS RESERVED. CO-FOUNDED BY NADEEM KHAN.
-            </div>
-        </div>
+    <footer>
+        <p>© 2026 NK Elevate Construction • Led by Nadeem Khan • All Rights Reserved</p>
     </footer>
 
 </body>
