@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -312,21 +311,21 @@
             </div>
         </div>
         <div class="contact-form">
-            <form action="#">
-                <input type="text" placeholder="Name" required>
-                <input type="text" placeholder="Phone" required>
-                <select required>
+            <form action="https://formspree.io/f/maqlzray" method="POST">
+                <input type="text" name="customer_name" placeholder="Name" required>
+                <input type="text" name="customer_phone" placeholder="Phone" required>
+                <select name="project_specification" required>
                     <option value="">Project Specification</option>
-                    <option>Residential Development</option>
-                    <option>Commercial Infrastructure</option>
-                    <option>Interior Architecture</option>
-                    <option>Renovation</option>
-                    <option>Engineering Consultancy</option>
+                    <option value="Residential Development">Residential Development</option>
+                    <option value="Commercial Infrastructure">Commercial Infrastructure</option>
+                    <option value="Interior Architecture">Interior Architecture</option>
+                    <option value="Renovation">Renovation</option>
+                    <option value="Engineering Consultancy">Engineering Consultancy</option>
                 </select>
-                <textarea rows="6" placeholder="Project details and requirements..."></textarea>
+                <textarea name="message" rows="6" placeholder="Project details and requirements..."></textarea>
                 <button type="submit" class="btn btn-gold">Request Consultation</button>
             </form>
-        </div>
+            </div>
     </section>
 
     <footer>
@@ -349,4 +348,3 @@
 
 </body>
 </html>
-``
