@@ -111,15 +111,12 @@
         .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 50px; }
         .service-card { background: var(--white); padding: 60px 40px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.03); }
 
-        /* Testimonials Section */
-        .testimonials { padding: 120px 10%; text-align: center; background: var(--white); }
+        .testimonials { padding: 120px 10%; text-align: center; }
         .testimonial-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 60px; }
-        .testi-card { background: var(--bg-light); padding: 50px; border-radius: 4px; border: 1px solid rgba(184, 149, 80, 0.1); text-align: left; }
-        .testi-card p { font-style: italic; margin-bottom: 20px; color: var(--text-dark); }
-        .testi-card h4 { color: var(--accent); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+        .testi-card { background: var(--white); padding: 50px; border-radius: 4px; border: 1px solid rgba(0,0,0,0.03); }
 
         .contact { padding: 120px 10%; background: #F9FAFB; display: grid; grid-template-columns: 1fr 1.5fr; gap: 100px; }
-        .contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 18px; margin-bottom: 20px; border: 1px solid #E2E8F0; border-radius: 4px; }
+        .contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 18px; margin-bottom: 20px; border: 1px solid #E2E8F0; }
 
         footer { text-align: center; padding: 50px; border-top: 1px solid #E2E8F0; font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
 
@@ -216,16 +213,17 @@
                 <h4>- PRIYA SHARMA</h4>
             </div>
         </div>
+        <div style="margin-top: 40px;">
+            <a href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review" class="btn btn-outline">Write a Review</a>
+        </div>
     </section>
 
     <section class="contact" id="contact">
         <div class="contact-info">
             <h2>Begin Your Legacy</h2>
             <p>Schedule an expert consultation today.</p>
-            <div style="margin-top: 30px;">
-                <p><i class="fas fa-phone" style="color:var(--accent); margin-right:10px;"></i> +91 96678 52195</p>
-                <p><i class="fas fa-envelope" style="color:var(--accent); margin-right:10px;"></i> nkconstruction089@gmail.com</p>
-            </div>
+            <div class="info-item"><i class="fas fa-phone"></i><div><p>+91 96678 52195</p></div></div>
+            <div class="info-item"><i class="fas fa-envelope"></i><div><p>nkconstruction089@gmail.com</p></div></div>
         </div>
         <div class="contact-form">
             <form action="https://formspree.io/f/maqlzray" method="POST" onsubmit="return gtag_report_conversion();">
