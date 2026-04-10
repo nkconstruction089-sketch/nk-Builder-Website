@@ -111,12 +111,15 @@
         .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 50px; }
         .service-card { background: var(--white); padding: 60px 40px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.03); }
 
-        .testimonials { padding: 120px 10%; text-align: center; }
+        /* Testimonials Section */
+        .testimonials { padding: 120px 10%; text-align: center; background: var(--white); }
         .testimonial-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 60px; }
-        .testi-card { background: var(--white); padding: 50px; border-radius: 4px; border: 1px solid rgba(0,0,0,0.03); }
+        .testi-card { background: var(--bg-light); padding: 50px; border-radius: 4px; border: 1px solid rgba(184, 149, 80, 0.1); text-align: left; }
+        .testi-card p { font-style: italic; margin-bottom: 20px; color: var(--text-dark); }
+        .testi-card h4 { color: var(--accent); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
 
         .contact { padding: 120px 10%; background: #F9FAFB; display: grid; grid-template-columns: 1fr 1.5fr; gap: 100px; }
-        .contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 18px; margin-bottom: 20px; border: 1px solid #E2E8F0; }
+        .contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 18px; margin-bottom: 20px; border: 1px solid #E2E8F0; border-radius: 4px; }
 
         footer { text-align: center; padding: 50px; border-top: 1px solid #E2E8F0; font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
 
@@ -201,12 +204,28 @@
         </div>
     </section>
 
+    <section class="testimonials">
+        <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">Client Visions Realized</h2>
+        <div class="testimonial-container">
+            <div class="testi-card">
+                <p>"The attention to structural detail and the honest consultancy provided by Nadeem's team made our home construction seamless."</p>
+                <h4>- ARJUN MEHTA</h4>
+            </div>
+            <div class="testi-card">
+                <p>"NK Elevate transformed our interior space into a masterpiece of luxury. Highly recommended for their transparency."</p>
+                <h4>- PRIYA SHARMA</h4>
+            </div>
+        </div>
+    </section>
+
     <section class="contact" id="contact">
         <div class="contact-info">
             <h2>Begin Your Legacy</h2>
             <p>Schedule an expert consultation today.</p>
-            <div class="info-item"><i class="fas fa-phone"></i><div><p>+91 96678 52195</p></div></div>
-            <div class="info-item"><i class="fas fa-envelope"></i><div><p>nkconstruction089@gmail.com</p></div></div>
+            <div style="margin-top: 30px;">
+                <p><i class="fas fa-phone" style="color:var(--accent); margin-right:10px;"></i> +91 96678 52195</p>
+                <p><i class="fas fa-envelope" style="color:var(--accent); margin-right:10px;"></i> nkconstruction089@gmail.com</p>
+            </div>
         </div>
         <div class="contact-form">
             <form action="https://formspree.io/f/maqlzray" method="POST" onsubmit="return gtag_report_conversion();">
